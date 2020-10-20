@@ -1,0 +1,28 @@
+{
+  "name": "switch_hat2.0.0",
+  "version": "2.0.0",
+  "description": "into the rabbit hole!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asherferri/switch2.0Hat.git"
+  },
+  "keywords": [
+    "switch",
+    "hacktoberfest2020",
+    "ptsd"
+  ],
+  "author": "AshR",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asherferri/switch2.0Hat/issues"
+  },
+  "homepage": "https://github.com/asherferri/switch2.0Hat#readme",
+  "dependencies": {
+    "onoff": "^6.0.1",
+    "socket.io": "^2.3.0"
+  }
+}

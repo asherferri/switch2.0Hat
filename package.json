@@ -4,7 +4,9 @@
   "description": "into the rabbit hole!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node switch.js",
+    "switch": "nodemon switch.js"
   },
   "repository": {
     "type": "git",

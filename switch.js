@@ -34,7 +34,7 @@ const PORT = process.env.PORT || 7772
 })
 
 io.sockets.on('connection', (socket7) => {
-    let buttonState = 0
+    let buttonState = "LOW"
         socket7.on('pwm7', (data) => {
             buttonState = data
              if(buttonState != GPIOpin7.readSync()) {

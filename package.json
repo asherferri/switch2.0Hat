@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/asherferri/switch2.0Hat#readme",
   "dependencies": {
+    "nodemon": "^2.0.6",
     "onoff": "^6.0.1",
     "socket.io": "^2.3.0"
   }

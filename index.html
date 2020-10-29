@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- 👾 🚀  ᕦ(ò_óˇ)ᕤ HxCx 👾 🚀 👾 🚀  ᕦ(ò_óˇ)ᕤ HxCx 👾 🚀 👾 🚀  ᕦ(ò_óˇ)ᕤ HxCx 👾 🚀 👾 🚀  ᕦ(ò_óˇ)ᕤ HxCx 👾 🚀  -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>TheSwitcH \m/ 2.0</title>
+    <link rel='stylesheet' type='text/css' href='./styles/style.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+</head>
+<body>
+
+    <div class="remote-container">
+        <h1>The Switch \m/ 2.0.0</h1>
+        <!-- OUTPUT GPIO 18 -->
+        <h2>GPIO7</h2>
+            <div class="button-container">
+                <button type="button" class="on" id="pwm18" onclick="gpioON7()">ON</button>
+                <button type="button" class="off" id="pwm18" onclick="gpioOFF7()">OFF</button>
+            </div>
+        <!-- OUTPUT GPIO 14 -->
+        <h2>GPIO3</h2>
+            <div class="button-container">
+                <button type="button" class="on" id="pwm14" onclick="gpioON3()">ON</button>
+                <button type="button" class="off" id="pwm14" onclick="gpioOFF3()">OFF</button>
+            </div>
+
+            
+        <!-- <h1>OUTPUT GPIO A</h2>
+                <div class="button-container">
+                    <button type="button" class="on" id="stateA" onclick="gpioONA()">ON</button>
+                    <button type="button" class="off" id="stateA" onclick="gpioOFFA()">OFF</button>
+                </div> -->
+
+                    <!-- OUTPUT GPIO 18 -->
+        <!-- <h2>Toggle TEST I</h2> -->
+        <!-- <div class="button-container">
+            <input type="checkbox" id="switchOnOff" onclick="changeLed()">
+        </div> -->
+
+        <div class="switch">
+            <label class="rocker">
+              <input type="checkbox" id="switchOnOff" onchange="changeLed()">
+              <span class="switch-left">On</span>
+              <span class="switch-right">Off</span>
+            </label>
+        </div>
+
+    </div>
+
+        <script>
+            //Loads socket.io client and connects to the host \m/
+            let socket7 = io.connect() 
+            gpioON7 = () => {
+                // sends button pwm to server \m/
+                socket7.emit("pwm7", "HIGH")
+            }
+            console.log('Listening to Caught in a Dream by Napalm Death 03:34EST \\m/ \\m/ \\m/ ')
+            gpioOFF7 = () => {
+                // sends button pwm to server \m/
+                socket7.emit("pwm7", "LOW") 
+            }
+
+            let socket3 = io.connect()
+            gpioON3 = () => {
+                socket3.emit("pwm3", 1)
+            }
+            gpioOFF3 = () => {
+                socket3.emit("pwm3", 0)
+            }
+
+        </script>
+
+<footer>
+    <h3 class="footer-text">👾 🚀  ᕦ(ò_óˇ)ᕤ HxCx 👾 🚀 - Built by AshR</h3>
+</footer>
+</body>
+<!-- 👾 🚀  ᕦ(ò_óˇ)ᕤ HxCx 👾 🚀 👾 🚀  ᕦ(ò_óˇ)ᕤ HxCx 👾 🚀 👾 🚀  ᕦ(ò_óˇ)ᕤ HxCx 👾 🚀  -->
+</html>

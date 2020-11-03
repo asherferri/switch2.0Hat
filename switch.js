@@ -1,13 +1,13 @@
 const Gpio = require('onoff').Gpio
 
-//GPIO 7
-const GPIOpin7 = new Gpio(7, 'out')
-//GPIO 3
-const GPIOpin3 = new Gpio(3, 'out')
+//GPIO 4
+const GPIOpin4 = new Gpio(4, 'out')
 //GPIO 22
 const GPIOpin22 = new Gpio(22, 'out')
-//GPIO 25
-const GPIOpin25 = new Gpio(25, 'out')
+//GPIO 6
+const GPIOpin6 = new Gpio(6, 'out')
+//GPIO 26
+const GPIOpin26 = new Gpio(26, 'out')
 
 const fs = require('fs')
 
@@ -33,22 +33,22 @@ const PORT = process.env.PORT || 7772
         console.log(`Listening to Chou by Amano Tsukiko on PORT ${PORT}`)
 })
 
-io.sockets.on('connection', (socket7) => {
-    let buttonState = "LOW"
-        socket7.on('pwm7', (data) => {
+io.sockets.on('connection', (socket4) => {
+    let buttonState = "0"
+        socket4.on('pwm4', (data) => {
             buttonState = data
-             if(buttonState != GPIOpin7.readSync()) {
-                 GPIOpin7.writeSync(buttonState)
+             if(buttonState != GPIOpin4.readSync()) {
+                 GPIOpin4.writeSync(buttonState)
              }
         })
 })
 
-io.sockets.on('connection', (socket3) => {
+io.sockets.on('connection', (socket22) => {
     let buttonState = 0
-        socket3.on('pwm3', (data) => {
+        socket22.on('pwm22', (data) => {
             buttonState = data
-            if (buttonState != GPIOpin3.readSync()) {
-                GPIOpin3.writeSync(buttonState)
+            if (buttonState != GPIOpin22.readSync()) {
+                GPIOpin22.writeSync(buttonState)
             }
         })
 })

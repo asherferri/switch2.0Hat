@@ -13,16 +13,16 @@
     <div class="remote-container">
         <h1>The Switch \m/ 2.0.0</h1>
         <!-- OUTPUT GPIO 18 -->
-        <h2>GPIO7</h2>
+        <h2>GPIO4</h2>
             <div class="button-container">
-                <button type="button" class="on" id="pwm18" onclick="gpioON7()">ON</button>
-                <button type="button" class="off" id="pwm18" onclick="gpioOFF7()">OFF</button>
+                <button type="button" class="on" id="pwm18" onclick="gpioON4()">ON</button>
+                <button type="button" class="off" id="pwm18" onclick="gpioOFF4()">OFF</button>
             </div>
         <!-- OUTPUT GPIO 14 -->
-        <h2>GPIO3</h2>
+        <h2>GPIO22</h2>
             <div class="button-container">
-                <button type="button" class="on" id="pwm14" onclick="gpioON3()">ON</button>
-                <button type="button" class="off" id="pwm14" onclick="gpioOFF3()">OFF</button>
+                <button type="button" class="on" id="pwm14" onclick="gpioON22()">ON</button>
+                <button type="button" class="off" id="pwm14" onclick="gpioOFF22()">OFF</button>
             </div>
 
             
@@ -50,23 +50,23 @@
 
         <script>
             //Loads socket.io client and connects to the host \m/
-            let socket7 = io.connect() 
-            gpioON7 = () => {
+            let socket4 = io.connect() 
+            gpioON4 = () => {
                 // sends button pwm to server \m/
-                socket7.emit("pwm7", "HIGH")
+                socket4.emit("pwm4", 1)
             }
             console.log('Listening to Caught in a Dream by Napalm Death 03:34EST \\m/ \\m/ \\m/ ')
-            gpioOFF7 = () => {
+            gpioOFF4 = () => {
                 // sends button pwm to server \m/
-                socket7.emit("pwm7", "LOW") 
+                socket4.emit("pwm4", 0) 
             }
 
-            let socket3 = io.connect()
-            gpioON3 = () => {
-                socket3.emit("pwm3", 1)
+            let socket22 = io.connect()
+            gpioON22 = () => {
+                socket22.emit("pwm22", 1)
             }
-            gpioOFF3 = () => {
-                socket3.emit("pwm3", 0)
+            gpioOFF22 = () => {
+                socket22.emit("pwm22", 0)
             }
 
         </script>

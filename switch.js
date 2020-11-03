@@ -53,3 +53,22 @@ io.sockets.on('connection', (socket22) => {
         })
 })
 
+io.sockets.on('connection', (socket6) => {
+    let buttonState = 0
+        socket6.on('pwm6', (data) => {
+            buttonState = data
+            if (buttonState != GPIOpin6.readSync()) {
+                GPIOpin6.writeSync(buttonState)
+            }
+        })
+})
+
+io.sockets.on('connection', (socket26) => {
+    let buttonState = 0
+        socket26.on('pwm26', (data) => {
+            buttonState = data
+            if (buttonState != GPIOpin26.readSync()) {
+                GPIOpin26.writeSync(buttonState)
+            }
+        })
+})

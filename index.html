@@ -12,19 +12,30 @@
 
     <div class="remote-container">
         <h1>The Switch \m/ 2.0.0</h1>
-        <!-- OUTPUT GPIO 18 -->
+        <!-- OUTPUT GPIO 4 -->
         <h2>GPIO4</h2>
             <div class="button-container">
                 <button type="button" class="on" id="pwm18" onclick="gpioON4()">ON</button>
                 <button type="button" class="off" id="pwm18" onclick="gpioOFF4()">OFF</button>
             </div>
-        <!-- OUTPUT GPIO 14 -->
+        <!-- OUTPUT GPIO 22 -->
         <h2>GPIO22</h2>
             <div class="button-container">
                 <button type="button" class="on" id="pwm14" onclick="gpioON22()">ON</button>
                 <button type="button" class="off" id="pwm14" onclick="gpioOFF22()">OFF</button>
             </div>
-
+        <!-- OUTPUT GPIO 6 -->
+        <h2>GPIO6</h2>
+            <div class="button-container">
+                <button type="button" class="on" id="pwm18" onclick="gpioON6()">ON</button>
+                <button type="button" class="off" id="pwm18" onclick="gpioOFF6()">OFF</button>
+            </div>
+        <!-- OUTPUT GPIO 26 -->
+        <h2>GPIO26</h2>
+            <div class="button-container">
+                <button type="button" class="on" id="pwm14" onclick="gpioON26()">ON</button>
+                <button type="button" class="off" id="pwm14" onclick="gpioOFF26()">OFF</button>
+            </div>
             
         <!-- <h1>OUTPUT GPIO A</h2>
                 <div class="button-container">
@@ -67,6 +78,22 @@
             }
             gpioOFF22 = () => {
                 socket22.emit("pwm22", 0)
+            }
+
+            let socket6 = io.connect()
+            gpioON6 = () => {
+                socket6.emit("pwm6", 1)
+            }
+            gpioOFF6 = () => {
+                socket6.emit("pwm6", 0)
+            }
+
+            let socket26 = io.connect()
+            gpioON26 = () => {
+                socket26.emit("pwm26", 1)
+            }
+            gpioOFF26 = () => {
+                socket26.emit("pwm26", 0)
             }
 
         </script>

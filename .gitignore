@@ -44,3 +44,7 @@ yarn-debug.log*
 yarn-debug.log*
 .yarn-integrity
 
+/switch2.0HatApp/node_modules
+/switch2.0HatApp/potato.js
+
+
